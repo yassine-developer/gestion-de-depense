@@ -5,9 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Exercice ...</title>
   <link rel="stylesheet" href="styles/styles.min.css">
-  <script src="./index.js"></script>
+  <script src="./index.js" defer></script>
 </head>
 <body>
-  
+  <h1>Gestion des dépenses</h1>
+  <div class="depenses">
+    <form action="">
+      <label for="description">Description</label>
+      <input type="text" id="description">
+      <label for="montant">Montant</label>
+      <input type="number" id="montant">
+      <label for="categorie">Categorie</label>
+      <select name="" id="categorie">
+        <option value="" disabled selected>-- Choisissez une categorie --</option>
+        <option value="Alimentation">Alimentation</option>
+        <option value="Logement">Logement</option>
+        <option value="Transport">Transport</option>
+        <option value="Divertissement">Divertissement</option>
+      </select>
+      <button>Ajouter</button>
+    </form>
+    <div class="liste-depenses">
+      <ul></ul>
+    </div>
+    <div class="totale">Totale:<span id="totale"> 0</span> €</div>
+  </div>
 </body>
 </html>
