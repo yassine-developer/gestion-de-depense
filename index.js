@@ -29,6 +29,7 @@ document.querySelector("button").addEventListener('click', (e) => {
 
 
     totale.innerText = `${somme}`;
+    document.querySelector("#categorie").value="";
 
 })
 
