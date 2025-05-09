@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Exercice ...</title>
+  <title>gestion de dépense</title>
   <link rel="stylesheet" href="styles/styles.min.css">
   <script src="./index.js" defer></script>
 </head>
+
 <body>
   <h1>Gestion des dépenses</h1>
   <div class="depenses">
@@ -23,6 +25,8 @@
         <option value="Transport">Transport</option>
         <option value="Divertissement">Divertissement</option>
       </select>
+      <label for="date">Date</label>
+      <input type="date" id="date">
       <button>Ajouter</button>
     </form>
     <div class="liste-depenses">
@@ -31,4 +35,5 @@
     <div class="totale">Totale:<span id="totale"> 0</span> €</div>
   </div>
 </body>
+
 </html>

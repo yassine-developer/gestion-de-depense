@@ -1,25 +1,31 @@
 const depenses = [];
 const listes = document.querySelector(".liste-depenses ul");
 const totale = document.querySelector("#totale");
+const emojis = ["🍔","🏠","🚗","🎮"];
+const categories = ["Alimentation", "Logement", "Transport", "Divertissement"];
 
 document.querySelector("button").addEventListener('click', (e) => {
     e.preventDefault();
     const nom = document.getElementById("description").value;
     const montant = parseInt(document.getElementById("montant").value, 10);
     const categorie = document.getElementById("categorie").value;
+    const date = document.getElementById("date").value;
 
 
-
-    depenses.push([nom, montant, categorie]);
+    depenses.push([nom, montant, categorie, date]);
 
     document.getElementById("description").value = "";
     document.getElementById("montant").value = "";
+    document.querySelector("#categorie").value="";
+    document.getElementById("date").value = "";
+
     let somme = 0;
     listes.innerHTML = "";
     depenses.forEach((element, index) => {
         const li = document.createElement("li");
+        let emoji = emojis[categories.indexOf(element[2])];
         li.innerHTML = `
-        ${element[0]} ${element[1]} ${element[2]}
+        ${element[0]} ${element[1]} ${emoji} ${element[2]} ${element[3]}
         <button class="supprimer" data-index="${index}">supprimer</supprimer>
         `;
         listes.appendChild(li);
@@ -29,7 +35,7 @@ document.querySelector("button").addEventListener('click', (e) => {
 
 
     totale.innerText = `${somme}`;
-    document.querySelector("#categorie").value="";
+    
 
 })
 
